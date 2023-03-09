@@ -1,0 +1,32 @@
+/* reset styles */
+* {
+	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+body {
+  font-family: 'Black Han Sans', sans-serif;
+  margin-inline: auto;
+  max-width: 40rem;
+  background: #262626;
+  color: #ededff;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 3rem;
+}
