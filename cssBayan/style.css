@@ -42,26 +42,29 @@ h1 {
 /* accordion style */
 .accordion {
   border-top: 0.01em solid #808080;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .accordion-item-label {
   cursor: pointer;
-  display: block;
-  overflow: hidden;
   padding-top: 0.5rem;
+  display: grid;
+  grid-template-columns: auto 5rem;
+  grid-template-rows: auto 1fr;
+  align-items: center;
 }
 
-.accordion-item-content > img {
-  margin: 1rem auto;
-}
-
-.label-inner {
-  display: flex;
-  justify-content: space-between;
+.accordion-image {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  grid-column: 1 / -1;
+  justify-self: center;
 }
 
 /* icons */
 .icon {
+  justify-self: end;
   visibility: hidden;
 }
 
@@ -71,29 +74,29 @@ h1 {
 
 /* change behavior */
 .wrapper:hover,
-input:checked ~ .label-inner {
+input:checked + .accordion-item-label {
   color: #0A0A0A;
 }
 
-.label-inner .icon {
+.accordion-item-label > .icon {
   transform: rotate(0);
   margin-right: 0.3rem;
-  transition: transform 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
-input:checked + .label-inner .icon,
-.accordion-item:hover .label-inner .icon {
+input:checked + .accordion-item-label .icon,
+.accordion-item:hover .accordion-item-label .icon {
   transform: rotate(90deg);
 }
 
-.accordion-item-content {
-  max-height: 0;
-  transition: max-height 1s ease-out;
+input:not(:checked) ~ .accordion-item-label .accordion-image {
+  width: 0;
+  transition: all 1s ease-out;
 }
 
-.accordion-item:hover input ~ .accordion-item-content,
-input:checked ~ .accordion-item-content {
-  max-height: 100vh;
+.accordion-item:hover .accordion-item-label .accordion-image,
+input:checked ~ .accordion-item-label .accordion-image {
+  width: 60%;
 }
 
 .accordion-item:active {
