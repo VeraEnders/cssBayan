@@ -17,16 +17,68 @@ picture {
 	display: block;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
+/* main style */
 body {
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   margin-inline: auto;
-  max-width: 40rem;
+  max-width: 45rem;
   background: #262626;
   color: #ededff;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   letter-spacing: 1px;
 }
 
 h1 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   font-size: 3rem;
+}
+
+/* accordion style */
+.accordion {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-top: 1px solid white;
+  padding-top: 0.5rem;
+  margin-top: 1rem;
+}
+
+.accordion-item-content > img {
+  margin-inline: auto;
+}
+
+/* icons */
+.accordion-item-label {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.accordion-item-label::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+}
+
+input:checked + label::after {
+  content: "x";
+  position: absolute;
+  right: 0;
+}
+
+/* accordion item open */
+.accordion-item-content {
+  max-height: 0;
+}
+
+input:checked ~ .accordion-item-content {
+  max-height: 100vh;
 }
