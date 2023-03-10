@@ -22,20 +22,50 @@ input[type="radio"] {
 }
 
 /* main style */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Archivo Black', sans-serif;
   margin-inline: auto;
-  max-width: 45rem;
   background: #262626;
+  max-width: 18.75rem;
   color: #ededff;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  transition: all 0.5s ease-out;
 }
 
 h1 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+/* breakpoints (mobile-first approach)*/ 
+@media only screen and (min-width: 820px) {
+  body {
+    max-width: 45rem;
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  body {
+    max-width: 55rem;
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 }
 
 /* accordion style */
@@ -45,7 +75,7 @@ h1 {
 }
 
 .accordion-item {
-  border-top: 1px solid white;
+  border-top: 0.05em solid white;
   padding-top: 0.5rem;
   margin-top: 1rem;
 }
@@ -54,7 +84,6 @@ h1 {
   margin-inline: auto;
 }
 
-/* icons */
 .accordion-item-label {
   cursor: pointer;
   position: relative;
@@ -62,14 +91,15 @@ h1 {
   padding-bottom: 1rem;
 }
 
+/* icons */
 .accordion-item-label::after {
-  content: "+";
+  content: "\002B";
   position: absolute;
   right: 0;
 }
 
 input:checked + label::after {
-  content: "x";
+  content: "\00D7";
   position: absolute;
   right: 0;
 }
@@ -82,3 +112,4 @@ input:checked + label::after {
 input:checked ~ .accordion-item-content {
   max-height: 100vh;
 }
+
