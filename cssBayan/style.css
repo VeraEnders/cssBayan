@@ -61,13 +61,12 @@ h1 {
 
 .accordion-item-label {
   cursor: pointer;
-  position: relative;
-  display: block;
   padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-.wrapper:hover,
-input:checked ~ label {
+.wrapper:hover {
   color: #ededff;
 }
 
@@ -107,16 +106,3 @@ input:checked ~ .accordion-item-content {
     margin-bottom: 3rem;
   }
 }
-
-/* icons */
-/* .accordion-item-label::after {
-  content: "\002B";
-  position: absolute;
-  right: 0;
-}
-
-input:checked + label::after {
-  content: "\00D7";
-  position: absolute;
-  right: 0;
-} */
